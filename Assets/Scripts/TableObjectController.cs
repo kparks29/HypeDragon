@@ -66,9 +66,12 @@ public class TableObjectController : MonoBehaviour
 	
 	void Update ()
     {
-		//Destroy Out of Bounds Objects
-		if (transform.position.y < 0)
-			Destroy(gameObject);
+        //Destroy Out of Bounds Objects
+        if (!IsATable)
+        {
+            if (transform.position.y < -1)
+                Destroy(gameObject);
+        }
 
 		//Generate Score
 		if (LastPosition == null)
