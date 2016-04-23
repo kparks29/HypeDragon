@@ -25,7 +25,7 @@ public class TableObjectController : MonoBehaviour
         //    TableObject.ObjectMesh = TableObjectMeshFilter.mesh;
         //}
         //else
-        Debug.Log("Bewp" + TableObject.ObjectMesh.name);
+        //Debug.Log("Bewp" + TableObject.ObjectMesh.name);
         TableObjectMeshFilter.mesh = TableObject.ObjectMesh;
 
         TableObjectMeshCollider = GetComponent<MeshCollider>();

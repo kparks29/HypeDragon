@@ -23,9 +23,9 @@ public static class GameInformation
     {
         tableObjects = new Dictionary<TableObjectNames, TableObject>();
 
-        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, 5, 0));
-        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, 0.5f, 0));
-        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, 0.5f, 0));
+        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, 5, 1));
+        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, 0.5f, 1));
+        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, 0.5f, 1));
     }
 
 	public class TableObject
