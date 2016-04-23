@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class GameInformation
 {
-    public enum TableObjectNames { PlainTable, Cup, Plate };
+    public enum TableObjectNames { PlainTable = -1, Cup = 0, Plate = 1 };
 
     private static Dictionary<TableObjectNames, TableObject> tableObjects;
     public static Dictionary<TableObjectNames, TableObject> TableObjects
