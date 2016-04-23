@@ -40,7 +40,7 @@ public class TableObjectGenerator : MonoBehaviour
             var maxZ = tablePosition.z + (tableSize.z / 2) - goSize.z;
             var xPos = UnityEngine.Random.Range(minX, maxX);
             var zPos = UnityEngine.Random.Range(minZ, maxZ);
-            var spawnPosition = new Vector3(xPos, tablePosition.y + 1, zPos);
+            var spawnPosition = new Vector3(xPos, tablePosition.y + 3, zPos);
 
             go.transform.position = spawnPosition;
 
