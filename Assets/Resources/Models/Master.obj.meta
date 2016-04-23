@@ -1,17 +1,52 @@
 fileFormatVersion: 2
-guid: 47d1ed5f69f40c14181e559f26d9d9a2
-timeCreated: 1461442474
+guid: 4742c93be66f7cb4ca7b2fe60c2ea57c
+timeCreated: 1461447023
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cylinder001
-    100002: //RootNode
-    400000: Cylinder001
-    400002: //RootNode
-    2300000: Cylinder001
-    3300000: Cylinder001
-    4300000: Cylinder001
+    100000: //RootNode
+    100002: Plate_Simple
+    100004: Rubber_Duck
+    100006: Table_Long
+    100008: Table_Long_COL_Foot_Left
+    100010: Table_Long_COL_Foot_Right
+    100012: Table_Long_COL_Leg_Left
+    100014: Table_Long_COL_Leg_Right
+    100016: Table_Long_COL_Top
+    400000: //RootNode
+    400002: Plate_Simple
+    400004: Rubber_Duck
+    400006: Table_Long
+    400008: Table_Long_COL_Foot_Left
+    400010: Table_Long_COL_Foot_Right
+    400012: Table_Long_COL_Leg_Left
+    400014: Table_Long_COL_Leg_Right
+    400016: Table_Long_COL_Top
+    2300000: Plate_Simple
+    2300002: Rubber_Duck
+    2300004: Table_Long
+    2300006: Table_Long_COL_Foot_Left
+    2300008: Table_Long_COL_Foot_Right
+    2300010: Table_Long_COL_Leg_Left
+    2300012: Table_Long_COL_Leg_Right
+    2300014: Table_Long_COL_Top
+    3300000: Plate_Simple
+    3300002: Rubber_Duck
+    3300004: Table_Long
+    3300006: Table_Long_COL_Foot_Left
+    3300008: Table_Long_COL_Foot_Right
+    3300010: Table_Long_COL_Leg_Left
+    3300012: Table_Long_COL_Leg_Right
+    3300014: Table_Long_COL_Top
+    4300000: Plate_Simple
+    4300002: Rubber_Duck
+    4300004: Table_Long
+    4300006: Table_Long_COL_Foot_Left
+    4300008: Table_Long_COL_Foot_Right
+    4300010: Table_Long_COL_Leg_Left
+    4300012: Table_Long_COL_Leg_Right
+    4300014: Table_Long_COL_Top
   materials:
     importMaterials: 1
     materialName: 0
