@@ -41,11 +41,11 @@ public static class GameInformation
     {
         tableObjects = new Dictionary<TableObjectNames, TableObject>();
 
-        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, 0.1f, 1));
-        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, 0.0005f, 1));
-        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, 0.0005f, 1));
-		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, null, 0.0001f, 1));
-        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, null, 0.0001f, 1));
+        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, 0.1f, 0.5f));
+        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, 0.0005f, 0.05f));
+        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, 0.0005f, 0.05f));
+		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, null, 0.0001f, 0.01f));
+        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, null, 0.0001f, 0.01f));
     }
 
 	public class TableObject
