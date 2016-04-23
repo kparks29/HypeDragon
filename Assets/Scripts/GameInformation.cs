@@ -6,6 +6,8 @@ public static class GameInformation
 {
     public enum TableObjectNames { PlainTable = -1, Cup = 0, Plate = 1 };
 
+	public static int Score = 0;
+
     private static Dictionary<TableObjectNames, TableObject> tableObjects;
     public static Dictionary<TableObjectNames, TableObject> TableObjects
     {

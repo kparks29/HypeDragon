@@ -10,6 +10,9 @@ public class TableObjectController : MonoBehaviour
     protected MeshCollider TableObjectMeshCollider;
     protected Rigidbody TableObjectRigidBody;
     protected AudioSource TableObjectAudioSource;
+
+	protected Vector3 LastPosition;
+	protected Quaternion LastRotation;
    
 	void Start ()
     {
@@ -59,6 +62,28 @@ public class TableObjectController : MonoBehaviour
 	
 	void Update ()
     {
-	
+		//Generate Score
+		if (LastPosition == null)
+			LastPosition = transform.position;
+		if (LastRotation == null)
+			LastRotation = transform.rotation;
+
+		var dist = Vector3.Distance(transform.position, LastPosition);
+		if (dist > 0)
+		{
+			int score = Mathf.CeilToInt(dist);
+			GameInformation.Score += score;
+		}
+
+		var rel = Quaternion.Inverse(transform.rotation) * LastRotation;
+		var dif = rel.x + rel.y + rel.z;
+		if (dif > 0)
+		{
+			int score = Mathf.CeilToInt(dif);
+			GameInformation.Score += score;
+		}
+
+		LastPosition = transform.position;
+		LastRotation = transform.rotation;
 	}
 }
