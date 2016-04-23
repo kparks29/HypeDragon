@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class GameInformation
 {
-    public enum TableObjectNames { PlainTable = -1, Cup = 0, Plate = 1 };
+    public enum TableObjectNames { PlainTable = -1, Cup = 0, Plate = 1, Duck = 2 };
 
 	public static int Score = 0;
 
@@ -28,7 +28,8 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, 5, 1));
         tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, 0.5f, 1));
         tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, 0.5f, 1));
-    }
+		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, null, 0.1f, 1));
+	}
 
 	public class TableObject
     {
