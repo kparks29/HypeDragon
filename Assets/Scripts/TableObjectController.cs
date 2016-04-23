@@ -7,6 +7,7 @@ public class TableObjectController : MonoBehaviour
 
     protected GameInformation.TableObject TableObject;
     protected MeshFilter TableObjectMeshFilter;
+    protected MeshCollider TableObjectMeshCollider;
     protected Rigidbody TableObjectRigidBody;
     protected AudioSource TableObjectAudioSource;
    
@@ -14,8 +15,26 @@ public class TableObjectController : MonoBehaviour
     {
         TableObject = GameInformation.TableObjects[TableObjectName];
         TableObjectMeshFilter = GetComponent<MeshFilter>();
-        if (TableObjectMeshFilter != null)
-            TableObject.ObjectMesh = TableObjectMeshFilter.mesh;
+        if (TableObjectMeshFilter == null)
+        {
+            var mf = gameObject.AddComponent<MeshFilter>();
+            TableObjectMeshFilter = mf;
+        }
+        //if (TableObjectMeshFilter.mesh != null)
+        //{
+        //    TableObject.ObjectMesh = TableObjectMeshFilter.mesh;
+        //}
+        //else
+        Debug.Log("Bewp" + TableObject.ObjectMesh.name);
+        TableObjectMeshFilter.mesh = TableObject.ObjectMesh;
+
+        TableObjectMeshCollider = GetComponent<MeshCollider>();
+        if (TableObjectMeshCollider == null)
+        {
+            var mc = gameObject.AddComponent<MeshCollider>();
+            TableObjectMeshCollider = mc;
+        }
+        TableObjectMeshCollider.sharedMesh = TableObjectMeshFilter.mesh;
 
         TableObjectRigidBody = GetComponent<Rigidbody>();
         if (TableObjectRigidBody == null)
