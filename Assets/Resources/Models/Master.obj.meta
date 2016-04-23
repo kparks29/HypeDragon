@@ -15,6 +15,7 @@ ModelImporter:
     100014: Table_Long_COL_Leg_Right
     100016: Table_Long_COL_Top
     100018: Cat
+    100020: Cup
     400000: //RootNode
     400002: Plate_Simple
     400004: Rubber_Duck
@@ -25,6 +26,7 @@ ModelImporter:
     400014: Table_Long_COL_Leg_Right
     400016: Table_Long_COL_Top
     400018: Cat
+    400020: Cup
     2300000: Plate_Simple
     2300002: Rubber_Duck
     2300004: Table_Long
@@ -34,6 +36,7 @@ ModelImporter:
     2300012: Table_Long_COL_Leg_Right
     2300014: Table_Long_COL_Top
     2300016: Cat
+    2300018: Cup
     3300000: Plate_Simple
     3300002: Rubber_Duck
     3300004: Table_Long
@@ -43,6 +46,7 @@ ModelImporter:
     3300012: Table_Long_COL_Leg_Right
     3300014: Table_Long_COL_Top
     3300016: Cat
+    3300018: Cup
     4300000: Plate_Simple
     4300002: Rubber_Duck
     4300004: Table_Long
@@ -52,6 +56,7 @@ ModelImporter:
     4300012: Table_Long_COL_Leg_Right
     4300014: Table_Long_COL_Top
     4300016: Cat
+    4300018: Cup
   materials:
     importMaterials: 1
     materialName: 0
