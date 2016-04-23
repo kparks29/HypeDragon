@@ -4,6 +4,7 @@ using System.Collections;
 public class TableObjectController : MonoBehaviour
 {
     public GameInformation.TableObjectNames TableObjectName;
+	public bool IsATable = false;
 
     protected GameInformation.TableObject TableObject;
     protected MeshFilter TableObjectMeshFilter;
@@ -31,13 +32,16 @@ public class TableObjectController : MonoBehaviour
         //Debug.Log("Bewp" + TableObject.ObjectMesh.name);
         TableObjectMeshFilter.mesh = TableObject.ObjectMesh;
 
-        TableObjectMeshCollider = GetComponent<MeshCollider>();
-        if (TableObjectMeshCollider == null)
-        {
-            var mc = gameObject.AddComponent<MeshCollider>();
-            TableObjectMeshCollider = mc;
-        }
-        TableObjectMeshCollider.sharedMesh = TableObjectMeshFilter.mesh;
+		if (!IsATable)
+		{
+			TableObjectMeshCollider = GetComponent<MeshCollider>();
+			if (TableObjectMeshCollider == null)
+			{
+				var mc = gameObject.AddComponent<MeshCollider>();
+				TableObjectMeshCollider = mc;
+			}
+			TableObjectMeshCollider.sharedMesh = TableObjectMeshFilter.mesh;
+		}
 
         TableObjectRigidBody = GetComponent<Rigidbody>();
         if (TableObjectRigidBody == null)

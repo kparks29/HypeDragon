@@ -736,6 +736,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8303dc38f01953e4aaa5706a046a58bf, type: 2}
+    - target: {fileID: 11408916, guid: f38b455667c28a849b654772bc56f57c, type: 2}
+      propertyPath: IsATable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f38b455667c28a849b654772bc56f57c, type: 2}
   m_IsPrefabParent: 0
@@ -1190,7 +1194,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
