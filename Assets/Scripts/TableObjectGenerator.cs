@@ -8,19 +8,23 @@ public class TableObjectGenerator : MonoBehaviour
 {
     public int NumberOfObjects = 3;
     public GameObject Table;
-
+	public GameObject TableObjectParent;
     public GameObject TableObjectPrefab;
 
 	void Start ()
     {
         //Get List of All Objects
-        var allTableObjects = Enum.GetValues(typeof(GameInformation.TableObjectNames)).Cast<GameInformation.TableObjectNames>().ToList();
-        allTableObjects = allTableObjects.Where(o => o >= 0).ToList();
+
         
-        StartCoroutine(SpawnObjects(allTableObjects));
+        StartCoroutine(SpawnObjects());
 	}
 
-    protected IEnumerator SpawnObjects(List<GameInformation.TableObjectNames> allTableObjects)
+	public void GenerateObjects()
+	{
+		StartCoroutine(SpawnObjects());
+	}
+
+    protected IEnumerator SpawnObjects()
     {
         //Find Table, Get Position Above Table
         if (Table == null) { Debug.Log("NO TABLE NOOOOOO"); }
@@ -31,8 +35,9 @@ public class TableObjectGenerator : MonoBehaviour
         for (int i = 0; i < NumberOfObjects; i++)
         {
 
-            var rand = UnityEngine.Random.Range(0, allTableObjects.Count);
+            var rand = UnityEngine.Random.Range(0, GameInformation.AllTableObjects.Count);
             var go = Instantiate(TableObjectPrefab);
+			go.transform.SetParent(TableObjectParent.transform);
             var goSize = Vector3.Scale(go.GetComponent<MeshFilter>().mesh.bounds.size, go.transform.localScale);
             var minX = tablePosition.x - (tableSize.x / 2) + goSize.x;
             var maxX = tablePosition.x + (tableSize.x / 2) - goSize.x;
@@ -45,7 +50,7 @@ public class TableObjectGenerator : MonoBehaviour
             go.transform.position = spawnPosition;
 
             var tableObjectController = go.GetComponent<TableObjectController>();
-            tableObjectController.TableObjectName = allTableObjects[rand];
+            tableObjectController.TableObjectName = GameInformation.AllTableObjects[rand];
             go.SetActive(true);
 
             yield return new WaitForSeconds(0.1f);

@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfObjects: 3
   Table: {fileID: 1731479911}
+  TableObjectParent: {fileID: 1096958641}
   TableObjectPrefab: {fileID: 165132, guid: f38b455667c28a849b654772bc56f57c, type: 2}
 --- !u!4 &213442074
 Transform:
@@ -389,6 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreDisplay: {fileID: 251924002}
+  Table: {fileID: 1731479911}
+  TableObjectsParent: {fileID: 1096958641}
 --- !u!1 &251924000
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +754,33 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300012, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+--- !u!1 &1096958641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1096958642}
+  m_Layer: 0
+  m_Name: TableObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096958642
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096958641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &1130979498
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +992,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

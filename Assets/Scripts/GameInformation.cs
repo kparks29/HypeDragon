@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public static class GameInformation
 {
@@ -8,7 +10,21 @@ public static class GameInformation
 
 	public static int Score = 0;
 
-    private static Dictionary<TableObjectNames, TableObject> tableObjects;
+	private static List<TableObjectNames> allTableObjects;
+	public static List<TableObjectNames> AllTableObjects
+	{
+		get
+		{
+			if (allTableObjects == null)
+			{
+				allTableObjects = Enum.GetValues(typeof(GameInformation.TableObjectNames)).Cast<GameInformation.TableObjectNames>().ToList();
+				allTableObjects = AllTableObjects.Where(o => o >= 0).ToList();
+			}
+			return allTableObjects;
+		}
+	}
+
+	private static Dictionary<TableObjectNames, TableObject> tableObjects;
     public static Dictionary<TableObjectNames, TableObject> TableObjects
     {
         get
