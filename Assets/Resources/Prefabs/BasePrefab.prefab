@@ -618,6 +618,8 @@ GameObject:
   - 114: {fileID: 11480448}
   - 114: {fileID: 11445984}
   - 111: {fileID: 11131128}
+  - 82: {fileID: 8272990}
+  - 114: {fileID: 11404410}
   m_Layer: 5
   m_Name: SpecialCanvas
   m_TagString: Untagged
@@ -980,7 +982,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162248}
   m_LocalRotation: {x: 0.015733473, y: 0, z: 0, w: 0.99987626}
-  m_LocalPosition: {x: 0, y: -0.95675874, z: 9.984672}
+  m_LocalPosition: {x: -0.3, y: -0.95675874, z: 9.984672}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 432514}
@@ -2317,7 +2319,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.3, z: 0.3}
-  m_Center: {x: 0, y: -0.1, z: -0.03}
+  m_Center: {x: 0, y: -0.14, z: -0.1}
 --- !u!65 &6588972
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2329,7 +2331,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.3, z: 0.3}
-  m_Center: {x: 0, y: -0.1, z: -0.03}
+  m_Center: {x: 0, y: -0.14, z: -0.1}
 --- !u!81 &8188482
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3077,6 +3079,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &8272990
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182190}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!92 &9244430
 Behaviour:
   m_ObjectHideFlags: 1
@@ -3137,6 +3213,41 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11404410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99745bf5de17a149a6ae5d5b86c1d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 9e6cb2ee3d071b947abf69df71847a29, type: 3}
+  - {fileID: 8300000, guid: 5356a883d4c124b49ab805e65f524298, type: 3}
+  - {fileID: 8300000, guid: bee3b8d10f587e642b3383c06744fb06, type: 3}
+  - {fileID: 8300000, guid: a3921ab3cdc617143a9c0fbc6e3cff63, type: 3}
+  - {fileID: 8300000, guid: 89e454f785e70c942841ed27d53e75fc, type: 3}
+  - {fileID: 8300000, guid: 0b4d78fd644c14745b95c8eced219965, type: 3}
+  - {fileID: 8300000, guid: f2ea16b5d9389a24fa9b34c973d73ea5, type: 3}
+  - {fileID: 8300000, guid: c0a1b29d8ebb23d489e420230afc8cf4, type: 3}
+  - {fileID: 8300000, guid: a86a4323c0542784484712ad4616e2df, type: 3}
+  - {fileID: 8300000, guid: cb4c9da550c7e4348a0716ae4c66c582, type: 3}
+  - {fileID: 8300000, guid: bbe3daf33aa9be44baf5aee131ba69aa, type: 3}
+  audioClipNames:
+  - FLIPPY FLOPPY
+  - MAXIMUM FLIP
+  - ULTRA FLIP
+  - FLIP YA
+  - TABLE DOWN
+  - SUPER FLIP
+  - UBER FLIP
+  - FLIP 2 DA MAX
+  - FLIP-STREAM
+  - KEEP ON FLIPPING
+  - FLIP YA
 --- !u!114 &11406832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3560,7 +3671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4362068a70c5f724abf90853a5987b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfTableObjects: 50
+  NumberOfTableObjects: 20
   NumberOfObstacles: 5
   BoomBox: {fileID: 152578}
   Table: {fileID: 162248}

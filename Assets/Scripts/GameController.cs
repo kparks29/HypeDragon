@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject Confetti1;
     public GameObject Confetti2;
 
-    protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
+    protected Vector3 TableStartPosition = new Vector3(-0.3f, 0, 0);
 	protected TableObjectGenerator TableObjectGeneratorScript;
 	protected int HighScore = 0;
 	protected bool NewHighScore = false;
