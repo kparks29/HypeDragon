@@ -22,6 +22,9 @@ ModelImporter:
     100028: Hotdog
     100030: Lobster
     100032: Mosquito
+    100034: Eggplant
+    100036: Flipper
+    100038: Pizza
     400000: //RootNode
     400002: Plate_Simple
     400004: Rubber_Duck
@@ -39,6 +42,9 @@ ModelImporter:
     400028: Hotdog
     400030: Lobster
     400032: Mosquito
+    400034: Eggplant
+    400036: Flipper
+    400038: Pizza
     2300000: Plate_Simple
     2300002: Rubber_Duck
     2300004: Table_Long
@@ -55,6 +61,9 @@ ModelImporter:
     2300026: Hotdog
     2300028: Lobster
     2300030: Mosquito
+    2300032: Eggplant
+    2300034: Flipper
+    2300036: Pizza
     3300000: Plate_Simple
     3300002: Rubber_Duck
     3300004: Table_Long
@@ -71,6 +80,9 @@ ModelImporter:
     3300026: Hotdog
     3300028: Lobster
     3300030: Mosquito
+    3300032: Eggplant
+    3300034: Flipper
+    3300036: Pizza
     4300000: Plate_Simple
     4300002: Rubber_Duck
     4300004: Table_Long
@@ -87,6 +99,9 @@ ModelImporter:
     4300026: Hotdog
     4300028: Lobster
     4300030: Mosquito
+    4300032: Eggplant
+    4300034: Flipper
+    4300036: Pizza
   materials:
     importMaterials: 1
     materialName: 0

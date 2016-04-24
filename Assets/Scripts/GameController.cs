@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 	public GameObject Table;
 	public GameObject TableObjectsParent;
     public GameObject ObstaclesParent;
+    public GameObject Confetti1;
+    public GameObject Confetti2;
 
     protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
 	protected TableObjectGenerator TableObjectGeneratorScript;
@@ -34,6 +36,9 @@ public class GameController : MonoBehaviour
 		if (!NewHighScore && GameInformation.Score > HighScore)
 		{
 			NewHighScore = true;
+            Confetti1.SetActive(true);
+            Confetti2.SetActive(true);
+            StartCoroutine(DestroyConfetti());
 		}
 		if (NewHighScore)
 		{
@@ -84,11 +89,20 @@ public class GameController : MonoBehaviour
 
 		TableObjectGeneratorScript.GenerateObjects();
         Physics.gravity = new Vector3(0, -9.81f, 0);
-	}
+        Confetti1.SetActive(false);
+        Confetti2.SetActive(false);
+    }
 
 	public void SetMessage(string message)
 	{
 		Message = message;
 		MessageCountdown = 1f;
 	}
+
+    public IEnumerator DestroyConfetti ()
+    {
+        yield return new WaitForSeconds(2.5f);
+        Confetti1.SetActive(false);
+        Confetti2.SetActive(false);
+    }
 }

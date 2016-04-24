@@ -6,7 +6,26 @@ using System.Linq;
 
 public static class GameInformation
 {
-    public enum TableObjectNames { Barrel = -2, PlainTable = -1, Cup = 0, Plate = 1, Duck = 2, Cat = 3, Banana = 4, Boom_Box = 5, Hot_Dog = 6, Lobster = 7, Mosquito = 8, Plate2 = 9, Cup2 = 10, Banana2 = 11, Hot_Dog2 = 12 };
+    public enum TableObjectNames {
+        Barrel = -2,
+        PlainTable = -1,
+        Cup = 0,
+        Plate = 1,
+        Duck = 2,
+        Cat = 3,
+        Banana = 4,
+        Boom_Box = 5,
+        Hot_Dog = 6,
+        Lobster = 7,
+        Mosquito = 8,
+        Plate2 = 9,
+        Cup2 = 10,
+        Banana2 = 11,
+        Hot_Dog2 = 12,
+        Flipper = 13,
+        Eggplant = 14,
+        Pizza = 15
+    };
 
 	public static int Score = 0;
 
@@ -72,7 +91,7 @@ public static class GameInformation
 		var sfxExplosion = Resources.Load("Audio/SoundEffects/SFX_EXPLODE1") as AudioClip;
 		var sfxWoosh = Resources.Load("Audio/SoundEffects/SFX_Woosh1") as AudioClip;
 
-		tableObjects.Add(TableObjectNames.Barrel, new TableObject(null, sfxExplosion, null, brownMaterial, 0.1f, 0.5f));
+		tableObjects.Add(TableObjectNames.Barrel, new TableObject(null, sfxExplosion, null, brownMaterial, 0.5f, 0.5f));
         tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, null, tableMaterial, 0.01f, 0.005f));
         tableObjects.Add(TableObjectNames.Cup, new TableObject(null, sfxObjSpawn2, null, redMaterial, 0.0005f, 0.01f));
         tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, null, whiteMaterial, 0.0005f, 0.01f));
@@ -87,6 +106,9 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.Plate2, new TableObject(null, null, null, whiteMaterial, 0.0005f, 0.01f));
         tableObjects.Add(TableObjectNames.Banana2, new TableObject(null, null, null, yellowMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Hot_Dog2, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
+        tableObjects.Add(TableObjectNames.Flipper, new TableObject(null, null, null, textureMaterial, 0.005f, 0.05f));
+        tableObjects.Add(TableObjectNames.Eggplant, new TableObject(null, null, null, textureMaterial, 0.005f, 0.01f));
+        tableObjects.Add(TableObjectNames.Pizza, new TableObject(null, sfxExplosion, null, textureMaterial, 0.005f, 0.01f));
     }
 
 	public class TableObject
