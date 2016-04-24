@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 	void Start ()
 	{
 		TableObjectGeneratorScript = GetComponent<TableObjectGenerator>();
-		HighScore = PlayerPrefs.GetInt("HighScore", 0);
+        HighScore = PlayerPrefs.GetInt("HighScore", 0);
 	}
 	
 	void Update ()
