@@ -19,8 +19,6 @@ public class GameController : MonoBehaviour
 	[HideInInspector]
 	public float MessageCountdown = 0;
 	[HideInInspector]
-	public float MessageCountdownMax = 5f;
-	[HideInInspector]
 	public string Message = "";
 
 	void Start ()
@@ -43,10 +41,17 @@ public class GameController : MonoBehaviour
 		}
 
 		//Display Messages
-		if (Message != "" && MessageCountdown > 0)
+		if (Message != "")
 		{
-			MessageCountdown -= Time.deltaTime;
-			dispText += "\n" + Message;
+            if (MessageCountdown > 0)
+            {
+                MessageCountdown -= Time.deltaTime;
+                dispText += "\n" + Message;
+            }
+            else
+            {
+                Message = "";
+            }
 		}
 
 		ScoreDisplay.text = dispText;
@@ -78,11 +83,12 @@ public class GameController : MonoBehaviour
 		GameInformation.Score = 0;
 
 		TableObjectGeneratorScript.GenerateObjects();
+        Physics.gravity = new Vector3(0, -9.81f, 0);
 	}
 
 	public void SetMessage(string message)
 	{
 		Message = message;
-		MessageCountdown = MessageCountdownMax;
+		MessageCountdown = 1f;
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,7 +18,11 @@ public class ObstacleController : ObjectBaseClass
 			foreach (Transform child in transform.parent.transform) children.Add(child.gameObject);
 			if (children.Count == 1)
 			{
-				Debug.Log("Destroyed All Objects!");
+                var specialCanvas = GameObject.Find("SpecialCanvas");
+                specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "FATALITY!";
+                specialCanvas.GetComponent<Animation>().Play();
+
+                Debug.Log("Destroyed All Objects!");
 				GameInformation.Score += 50000;
 			}
 

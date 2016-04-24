@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BoomBoxController : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class BoomBoxController : MonoBehaviour
 			Instantiate(Explosion, transform.position, transform.rotation);
             gameObject.SetActive(false);
             Debug.Log(gameObject.name);
+            specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "Killer Move!";
+            GameInformation.Score += 50000;
             specialCanvas.GetComponent<Animation>().Play();
 
         }

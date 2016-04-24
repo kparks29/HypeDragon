@@ -81,13 +81,13 @@ public class TableObjectGenerator : MonoBehaviour
             var go = Instantiate(TableObjectPrefab);
 			go.transform.SetParent(TableObjectParent.transform);
             var goSize = Vector3.Scale(go.GetComponent<MeshFilter>().mesh.bounds.size, go.transform.localScale);
-            var minX = tablePosition.x - (tableSize.x / 2) + goSize.x;
-            var maxX = tablePosition.x + (tableSize.x / 2) - goSize.x;
-            var minZ = tablePosition.z - (tableSize.z / 2) + goSize.z;
-            var maxZ = tablePosition.z + (tableSize.z / 2) - goSize.z;
+            var minX = tablePosition.x - (tableSize.x / 3) + goSize.x;
+            var maxX = tablePosition.x + (tableSize.x / 3) - goSize.x;
+            var minZ = tablePosition.z - (tableSize.z / 3) + goSize.z;
+            var maxZ = tablePosition.z + (tableSize.z / 3) - goSize.z;
             var xPos = UnityEngine.Random.Range(minX, maxX);
             var zPos = UnityEngine.Random.Range(minZ, maxZ);
-            var spawnPosition = new Vector3(xPos, tablePosition.y + 3, zPos);
+            var spawnPosition = new Vector3(xPos, tablePosition.y + 2, zPos);
 			var spawnRotation = new Vector3(UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360));
 
             go.transform.position = spawnPosition;
@@ -97,7 +97,7 @@ public class TableObjectGenerator : MonoBehaviour
             tableObjectController.TableObjectName = GameInformation.AllTableObjects[rand];
             go.SetActive(true);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
 
 

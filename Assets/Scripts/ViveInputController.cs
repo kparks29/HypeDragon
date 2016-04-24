@@ -6,6 +6,7 @@ public class ViveInputController : MonoBehaviour {
 
     SteamVR_TrackedObject trackedObject;
     public GameController gameController;
+    public int controllerIndex;
 
     void Awake ()
     {
@@ -21,19 +22,20 @@ public class ViveInputController : MonoBehaviour {
             gameController.ResetGame();
         }
 
-		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Axis1))
+		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
 		{
+            Debug.Log("change gravity");
 			var gravity = Physics.gravity;
-			gravity.y -= 1;
+            if (controllerIndex == 1)
+            {
+                gravity.y -= 0.5f;
+            }
+            else
+            {
+                gravity.y += 0.5f;
+            }
 			Physics.gravity = gravity;
-			gameController.SetMessage("Gravity Set: " + gravity);
-		}
-		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Axis3))
-		{
-			var gravity = Physics.gravity;
-			gravity.y += 1;
-			Physics.gravity = gravity;
-			gameController.SetMessage("Gravity Set: " + gravity);
+			gameController.SetMessage("Gravity Set: " + gravity.y);
 		}
 	}
 

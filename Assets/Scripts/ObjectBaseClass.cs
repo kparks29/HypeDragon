@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ObjectBaseClass : MonoBehaviour {
@@ -128,6 +129,12 @@ public class ObjectBaseClass : MonoBehaviour {
 			ColliderCount++;
 			GameInformation.Score += 1000 * ColliderCount;
 			Debug.Log("Combo: " + ColliderCount + " X 1000");
+            if (ColliderCount > 3)
+            {
+                var specialCanvas = GameObject.Find("SpecialCanvas");
+                specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "C C C Combo";
+                specialCanvas.GetComponent<Animation>().Play();
+            }
 		}
 
 
