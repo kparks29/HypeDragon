@@ -146,7 +146,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!43 &395360498
+--- !u!43 &212439661
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -706,7 +706,7 @@ Prefab:
     - target: {fileID: 3391748, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 395360498}
+      objectReference: {fileID: 212439661}
     - target: {fileID: 11408670, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
       propertyPath: Table
       value: 
