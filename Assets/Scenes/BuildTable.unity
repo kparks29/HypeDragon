@@ -336,14 +336,6 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1670338433}
-    - target: {fileID: 11408670, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: Table
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11485728, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: Table
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
   m_IsPrefabParent: 0
