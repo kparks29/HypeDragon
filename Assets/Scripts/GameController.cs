@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 	
 	void Update ()
 	{
-		ScoreDisplay.text = "Score: " + GameInformation.Score;
+		//ScoreDisplay.text = "Score: " + GameInformation.Score;
 		if (Input.GetKeyDown(KeyCode.R))
 			ResetGame();
 	}
