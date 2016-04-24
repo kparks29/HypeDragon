@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
 	void Start ()
 	{
 		TableObjectGeneratorScript = GetComponent<TableObjectGenerator>();
-        PlayerPrefs.DeleteAll();    
         HighScore = PlayerPrefs.GetInt("HighScore", 0);
 	}
 	
