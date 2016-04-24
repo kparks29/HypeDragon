@@ -12,15 +12,17 @@ public class GameController : MonoBehaviour
 
 	protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
 	protected TableObjectGenerator TableObjectGeneratorScript;
+	protected int HighScore = 0;
 
 	void Start ()
 	{
 		TableObjectGeneratorScript = GetComponent<TableObjectGenerator>();
+		HighScore = PlayerPrefs.GetInt("HighScore", 0);
 	}
 	
 	void Update ()
 	{
-		ScoreDisplay.text = "Score: " + String.Format("{0:n0}", GameInformation.Score);
+		ScoreDisplay.text = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + HighScore;
 		if (Input.GetKeyDown(KeyCode.R))
 			ResetGame();
 	}
@@ -33,6 +35,13 @@ public class GameController : MonoBehaviour
 
 		Table.transform.position = TableStartPosition;
 		Table.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+		HighScore = PlayerPrefs.GetInt("HighScore");
+		if (GameInformation.Score > HighScore)
+		{
+			HighScore = GameInformation.Score;
+			PlayerPrefs.SetInt("HighScore", HighScore);
+		}
 
 		GameInformation.Score = 0;
 
