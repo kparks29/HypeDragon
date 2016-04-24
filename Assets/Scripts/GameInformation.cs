@@ -96,9 +96,9 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.Cup, new TableObject(null, sfxObjSpawn2, null, redMaterial, 0.0005f, 0.01f));
         tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, null, whiteMaterial, 0.0005f, 0.01f));
 		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, sfxDuck, null, yellowMaterial, 0.0001f, 0.01f));
-        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, sfxCat, sfxWoosh, blueMaterial, 0.0005f, 0.1f));
+        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, sfxCat, sfxWoosh, blueMaterial, 0.0005f, 0.1f, 0.01f));
         tableObjects.Add(TableObjectNames.Banana, new TableObject(null, null, null, yellowMaterial, 0.0001f, 0.005f));
-        tableObjects.Add(TableObjectNames.Boom_Box, new TableObject(null, sfxObjSpawn1, sfxWoosh, blackMaterial, 0.0001f, 0.15f));
+        tableObjects.Add(TableObjectNames.Boom_Box, new TableObject(null, sfxObjSpawn1, sfxWoosh, blackMaterial, 0.0001f, 0.15f, 0.01f));
         tableObjects.Add(TableObjectNames.Lobster, new TableObject(null, null, null, redMaterial, 0.0005f, 0.1f));
         tableObjects.Add(TableObjectNames.Hot_Dog, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Mosquito, new TableObject(null, sfxObjSpawn3, null, brownMaterial, 0.0001f, 0.0001f));
@@ -108,7 +108,7 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.Hot_Dog2, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Flipper, new TableObject(null, null, null, textureMaterial, 0.005f, 0.05f));
         tableObjects.Add(TableObjectNames.Eggplant, new TableObject(null, null, null, textureMaterial, 0.005f, 0.01f));
-        tableObjects.Add(TableObjectNames.Pizza, new TableObject(null, sfxExplosion, null, textureMaterial, 0.005f, 0.01f));
+        tableObjects.Add(TableObjectNames.Pizza, new TableObject(null, sfxExplosion, null, textureMaterial, 0.005f, 0.01f, 0.01f));
     }
 
 	public class TableObject
@@ -119,8 +119,9 @@ public static class GameInformation
 		public Material Material;
         public float Mass;
         public float Drag;
+		public float Limit;
 
-        public TableObject(Mesh objectMesh = null, AudioClip soundEffect = null, AudioClip flySoundEffect = null, Material material = null, float mass = 1, float drag = 1)
+        public TableObject(Mesh objectMesh = null, AudioClip soundEffect = null, AudioClip flySoundEffect = null, Material material = null, float mass = 1, float drag = 1, float limit = 1f)
         {
             ObjectMesh = objectMesh;
             SoundEffect = soundEffect;
@@ -128,6 +129,7 @@ public static class GameInformation
 			Material = material;
             Mass = mass;
             Drag = drag;
+			Limit = limit;
         }
     }
 }
