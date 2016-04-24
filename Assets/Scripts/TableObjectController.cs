@@ -11,6 +11,7 @@ public class TableObjectController : MonoBehaviour
     protected MeshCollider TableObjectMeshCollider;
     protected Rigidbody TableObjectRigidBody;
     protected AudioSource TableObjectAudioSource;
+	protected MeshRenderer TableObjectMeshRenderer;
 
 	protected Vector3 LastPosition;
 	protected Quaternion LastRotation;
@@ -42,6 +43,14 @@ public class TableObjectController : MonoBehaviour
 			}
 			TableObjectMeshCollider.sharedMesh = TableObjectMeshFilter.mesh;
 		}
+
+		TableObjectMeshRenderer = GetComponent<MeshRenderer>();
+		if (TableObjectMeshRenderer == null)
+		{
+			var tomr = gameObject.AddComponent<MeshRenderer>();
+			TableObjectMeshRenderer = tomr;
+		}
+		TableObjectMeshRenderer.material = TableObject.Material;
 
         TableObjectRigidBody = GetComponent<Rigidbody>();
         if (TableObjectRigidBody == null)
@@ -80,7 +89,7 @@ public class TableObjectController : MonoBehaviour
 			LastRotation = transform.rotation;
 
 		var dist = Vector3.Distance(transform.position, LastPosition);
-		if (dist > 0)
+		if (dist > 0.01)
 		{
 			int score = Mathf.CeilToInt(dist);
 			GameInformation.Score += score;
@@ -88,7 +97,7 @@ public class TableObjectController : MonoBehaviour
 
 		var rel = Quaternion.Inverse(transform.rotation) * LastRotation;
 		var dif = rel.x + rel.y + rel.z;
-		if (dif > 0)
+		if (dif > 0.01)
 		{
 			int score = Mathf.CeilToInt(dif);
 			GameInformation.Score += score;
