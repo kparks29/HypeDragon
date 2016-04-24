@@ -19,6 +19,9 @@ ModelImporter:
     100022: Banana
     100024: Barrel
     100026: Boom_Box
+    100028: Hotdog
+    100030: Lobster
+    100032: Mosquito
     400000: //RootNode
     400002: Plate_Simple
     400004: Rubber_Duck
@@ -33,6 +36,9 @@ ModelImporter:
     400022: Banana
     400024: Barrel
     400026: Boom_Box
+    400028: Hotdog
+    400030: Lobster
+    400032: Mosquito
     2300000: Plate_Simple
     2300002: Rubber_Duck
     2300004: Table_Long
@@ -46,6 +52,9 @@ ModelImporter:
     2300020: Banana
     2300022: Barrel
     2300024: Boom_Box
+    2300026: Hotdog
+    2300028: Lobster
+    2300030: Mosquito
     3300000: Plate_Simple
     3300002: Rubber_Duck
     3300004: Table_Long
@@ -59,6 +68,9 @@ ModelImporter:
     3300020: Banana
     3300022: Barrel
     3300024: Boom_Box
+    3300026: Hotdog
+    3300028: Lobster
+    3300030: Mosquito
     4300000: Plate_Simple
     4300002: Rubber_Duck
     4300004: Table_Long
@@ -72,6 +84,9 @@ ModelImporter:
     4300020: Banana
     4300022: Barrel
     4300024: Boom_Box
+    4300026: Hotdog
+    4300028: Lobster
+    4300030: Mosquito
   materials:
     importMaterials: 1
     materialName: 0

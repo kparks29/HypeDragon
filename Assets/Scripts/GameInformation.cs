@@ -6,7 +6,7 @@ using System.Linq;
 
 public static class GameInformation
 {
-    public enum TableObjectNames { Barrel = -2, PlainTable = -1, Cup = 0, Plate = 1, Duck = 2, Cat = 3, Banana = 4, Boom_Box = 5 };
+    public enum TableObjectNames { Barrel = -2, PlainTable = -1, Cup = 0, Plate = 1, Duck = 2, Cat = 3, Banana = 4, Boom_Box = 5, Hot_Dog = 6, Lobster = 7, Mosquito = 8 };
 
 	public static int Score = 0;
 
@@ -62,8 +62,9 @@ public static class GameInformation
 		var blackMaterial = Resources.Load("Models/Materials/BlackMaterial") as Material;
 		var brownMaterial = Resources.Load("Models/Materials/BrownMaterial") as Material;
 		var tableMaterial = Resources.Load("Models/Materials/TableMaterial") as Material;
+        var textureMaterial = Resources.Load("Models/Materials/TextureMaterial") as Material;
 
-		var sfxCat = Resources.Load("Audio/SoundEffects/SFX_CatMeow1") as AudioClip;
+        var sfxCat = Resources.Load("Audio/SoundEffects/SFX_CatMeow1") as AudioClip;
 		var sfxDuck = Resources.Load("Audio/SoundEffects/SFX_Duck1") as AudioClip;
 		var sfxObjSpawn1 = Resources.Load("Audio/SoundEffects/SFX_ObjSpawn1") as AudioClip;
 		var sfxObjSpawn2 = Resources.Load("Audio/SoundEffects/SFX_ObjSpawn2") as AudioClip;
@@ -78,7 +79,10 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.Cat, new TableObject(null, sfxCat, blueMaterial, 0.0005f, 0.1f));
         tableObjects.Add(TableObjectNames.Banana, new TableObject(null, null, yellowMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Boom_Box, new TableObject(null, sfxObjSpawn1, blackMaterial, 0.0001f, 0.15f));
-	}
+        tableObjects.Add(TableObjectNames.Lobster, new TableObject(null, null, redMaterial, 0.0005f, 0.1f));
+        tableObjects.Add(TableObjectNames.Hot_Dog, new TableObject(null, sfxExplosion, textureMaterial, 0.0001f, 0.005f));
+        tableObjects.Add(TableObjectNames.Mosquito, new TableObject(null, sfxObjSpawn3, brownMaterial, 0.0001f, 0.0001f));
+    }
 
 	public class TableObject
     {

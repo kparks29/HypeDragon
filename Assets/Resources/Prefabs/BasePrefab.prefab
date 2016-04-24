@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d55d253842bde408d4a9968843b274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectNames: ffffffff000000000100000002000000030000000400000005000000feffffff
+  ObjectNames: ffffffff000000000100000002000000030000000400000005000000feffffff060000000700000008000000
   ObjectMeshes:
   - {fileID: 4300004, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
   - {fileID: 4300018, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
@@ -1657,6 +1657,9 @@ MonoBehaviour:
   - {fileID: 4300020, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
   - {fileID: 4300024, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
   - {fileID: 4300022, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+  - {fileID: 4300026, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+  - {fileID: 4300028, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+  - {fileID: 4300030, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
 --- !u!114 &11429574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2256,6 +2259,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
