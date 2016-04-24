@@ -8,6 +8,7 @@ public class TableObjectGenerator : MonoBehaviour
 {
     public int NumberOfTableObjects = 3;
     public int NumberOfObstacles = 3;
+    public GameObject BoomBox;
     public GameObject Table;
 	public GameObject TableObjectParent;
     public GameObject TableObjectPrefab;
@@ -18,13 +19,20 @@ public class TableObjectGenerator : MonoBehaviour
     {
         //Get List of All Objects
         StartCoroutine(SpawnObjects());
-        StartCoroutine(SpawnObstacles()); 
-	}
+        StartCoroutine(SpawnObstacles());
+    }
 
 	public void GenerateObjects()
 	{
 		StartCoroutine(SpawnObjects());
         StartCoroutine(SpawnObstacles());
+        if (!BoomBox.activeInHierarchy)
+        {
+            BoomBox.SetActive(true);
+            BoomBox.GetComponent<AudioSource>().Play();
+        }
+        BoomBox.transform.localPosition = new Vector3(0, 0, 5.7f);
+        BoomBox.transform.localRotation = Quaternion.Euler(0, 270, 0);
 	}
 
     protected IEnumerator SpawnObstacles()
@@ -89,5 +97,8 @@ public class TableObjectGenerator : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+
+
     }
+
 }
