@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObstacleController : ObjectBaseClass {
-
+public class ObstacleController : ObjectBaseClass
+{
     public GameObject explosion;
 
-    void OnCollisionEnter(Collision collision)
+    public override void ChildCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "TableObjectPrefab(Clone)")
         {

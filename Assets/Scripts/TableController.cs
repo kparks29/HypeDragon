@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TableController : MonoBehaviour
 {
-	public AudioSource gameAudioSource;
+	public BoomBoxController BoomBoxCtrl;
 
 	protected bool PlayingVictory = false;
 	protected float ChangeTimer = 0;
@@ -23,7 +23,7 @@ public class TableController : MonoBehaviour
 			if ((Mathf.Abs(transform.eulerAngles.x) > 30 && Mathf.Abs(transform.eulerAngles.x) < 330)
 				|| (Mathf.Abs(transform.eulerAngles.z) > 30 && Mathf.Abs(transform.eulerAngles.z) < 330))
 			{
-				Debug.Log("Play Victory Music");
+				BoomBoxCtrl.ChangeToCrazyMusic();
 				PlayingVictory = true;
 			}
 		}
@@ -38,7 +38,7 @@ public class TableController : MonoBehaviour
 				}
 				else
 				{
-					Debug.Log("Return Music to Normal");
+					BoomBoxCtrl.ChangeToNormalMusic();
 					PlayingVictory = false;
 					ChangeTimer = 0;
 				}
@@ -46,7 +46,6 @@ public class TableController : MonoBehaviour
 			else if (ChangeTimer > 0)
 			{
 				ChangeTimer = 0;
-				Debug.Log("ResetTimer");
 			}
 		}
 	}

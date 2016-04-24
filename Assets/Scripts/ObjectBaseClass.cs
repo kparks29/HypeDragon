@@ -16,6 +16,9 @@ public class ObjectBaseClass : MonoBehaviour {
     protected Vector3 LastPosition;
     protected Quaternion LastRotation;
 
+	protected float SFXCountDown = 0;
+	protected float SFXCountDownMax = 1;
+
     void Start()
     {
         TableObject = GameInformation.TableObjects[TableObjectName];
@@ -65,12 +68,9 @@ public class ObjectBaseClass : MonoBehaviour {
         if (TableObjectAudioSource == null)
         {
             var audSrc = gameObject.AddComponent<AudioSource>();
-            audSrc.clip = TableObject.SoundEffect;
+			TableObjectAudioSource = audSrc;
         }
-        else
-        {
-            TableObject.SoundEffect = TableObjectAudioSource.clip;
-        }
+		TableObjectAudioSource.clip = TableObject.SoundEffect;
     }
 
     void Update()
@@ -105,5 +105,24 @@ public class ObjectBaseClass : MonoBehaviour {
 
         LastPosition = transform.position;
         LastRotation = transform.rotation;
+
+		//SFXTimer
+		if (SFXCountDown > 0)
+			SFXCountDown -= Time.deltaTime;
     }
+
+	void OnCollisionEnter(Collision collision)
+	{	
+		if (TableObject.SoundEffect != null && SFXCountDown <= 0)
+		{
+			TableObjectAudioSource.Play();
+			SFXCountDown = SFXCountDownMax;
+		}
+		ChildCollisionEnter(collision);
+	}
+	
+	public virtual void ChildCollisionEnter(Collision collision)
+	{
+
+	}
 }
