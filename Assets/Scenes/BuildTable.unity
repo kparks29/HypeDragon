@@ -146,7 +146,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!43 &115461398
+--- !u!43 &395360498
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -483,12 +483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &780776054 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11485728, guid: dca6bfe9f826e624e9d61eeea3763cd8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1299953709}
-  m_Script: {fileID: 11500000, guid: f1ded36f5bfde4044a10b9cfd3502281, type: 3}
 --- !u!1 &1003905557
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,14 +671,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectNames.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectMeshes.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 426190, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -720,7 +706,7 @@ Prefab:
     - target: {fileID: 3391748, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 115461398}
+      objectReference: {fileID: 395360498}
     - target: {fileID: 11408670, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
       propertyPath: Table
       value: 
@@ -729,49 +715,9 @@ Prefab:
       propertyPath: Table
       value: 
       objectReference: {fileID: 1731479911}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectNames.Array.data[5]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectNames.Array.data[6]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectNames.Array.data[7]
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectMeshes.Array.data[5]
-      value: 
-      objectReference: {fileID: 4300020, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectMeshes.Array.data[6]
-      value: 
-      objectReference: {fileID: 4300024, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
-    - target: {fileID: 11428620, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-      propertyPath: ObjectMeshes.Array.data[7]
-      value: 
-      objectReference: {fileID: 4300022, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1536992743 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 146648, guid: dca6bfe9f826e624e9d61eeea3763cd8, type: 2}
-  m_PrefabInternal: {fileID: 1299953709}
---- !u!114 &1536992748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1536992743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be4b79d63745a154c9fc496e3490f7f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 780776054}
 --- !u!1 &1731479911 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 165132, guid: f38b455667c28a849b654772bc56f57c, type: 2}
