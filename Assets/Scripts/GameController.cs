@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
 	protected TableObjectGenerator TableObjectGeneratorScript;
 	protected int HighScore = 0;
+	protected bool NewHighScore = false;
 
 	void Start ()
 	{
@@ -23,7 +24,17 @@ public class GameController : MonoBehaviour
 	
 	void Update ()
 	{
-		ScoreDisplay.text = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + HighScore;
+		var dispText = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + HighScore;		
+		if (!NewHighScore && GameInformation.Score > HighScore)
+		{
+			NewHighScore = true;
+		}
+		if (NewHighScore)
+		{
+			dispText += "\nNEW HIGH SCORE!!!!";
+		}
+		ScoreDisplay.text = dispText;
+
 		if (Input.GetKeyDown(KeyCode.R))
 			ResetGame();
 	}
@@ -47,6 +58,7 @@ public class GameController : MonoBehaviour
 			HighScore = GameInformation.Score;
 			PlayerPrefs.SetInt("HighScore", HighScore);
 		}
+		NewHighScore = false;
 
 		GameInformation.Score = 0;
 
