@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
 	
 	void Update ()
 	{
-		var dispText = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + HighScore;		
+		var dispText = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + String.Format("{0:n0}", HighScore);		
 		if (!NewHighScore && GameInformation.Score > HighScore)
 		{
 			NewHighScore = true;

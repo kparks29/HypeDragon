@@ -18,6 +18,7 @@ public class ObjectBaseClass : MonoBehaviour {
 
 	protected float SFXCountDown = 0;
 	protected float SFXCountDownMax = 2;
+	protected int ColliderCount = 0;
 
     void Start()
     {
@@ -112,7 +113,15 @@ public class ObjectBaseClass : MonoBehaviour {
     }
 
 	void OnCollisionEnter(Collision collision)
-	{	
+	{
+		if (collision.gameObject.name == "ExplosionCollision(Clone)")
+		{			
+			ColliderCount++;
+			GameInformation.Score += 1000 * ColliderCount;
+			Debug.Log("Combo: " + ColliderCount + " X 1000");
+		}
+
+
 		if (TableObject.SoundEffect != null && SFXCountDown <= 0)
 		{
 			if (Random.Range(0f, 1f) > 0.3f)
