@@ -41,10 +41,11 @@ public class TableObjectGenerator : MonoBehaviour
         if (Table == null) { Debug.Log("NO TABLE NOOOOOO"); }
         var tablePosition = Table.transform.position;
 
+		
         //Spawn Obstacles
         for (int i = 0; i < NumberOfObstacles; i++)
         {
-            var rand = UnityEngine.Random.Range(0, GameInformation.AllObstacles.Count);
+            var rand = UnityEngine.Random.Range(0, GameInformation.AllObstacles.Count());
             var obstacle = Instantiate(ObstaclePrefab);
             obstacle.transform.SetParent(ObstacleParent.transform);
             var goSize = Vector3.Scale(obstacle.GetComponent<MeshFilter>().mesh.bounds.size, obstacle.transform.localScale);
@@ -59,7 +60,7 @@ public class TableObjectGenerator : MonoBehaviour
             obstacle.transform.position = spawnPosition;
 
             var tableObjectController = obstacle.GetComponent<ObstacleController>();
-            tableObjectController.TableObjectName = GameInformation.AllObstacles[rand];
+			tableObjectController.TableObjectName = GameInformation.AllObstacles[rand];
             obstacle.SetActive(true);
 
             yield return new WaitForSeconds(0.1f);
@@ -73,11 +74,23 @@ public class TableObjectGenerator : MonoBehaviour
         var tablePosition = Table.transform.position;
         var tableSize = Vector3.Scale(Table.GetComponent<MeshFilter>().mesh.bounds.size, Table.transform.localScale);
 
-        //Spawn Objects
-        for (int i = 0; i < NumberOfTableObjects; i++)
+		//Spawn Objects
+		var objectsForSpawning = new List<GameInformation.TableObjectNames>(GameInformation.AllTableObjects);
+		var objectTracking = new Dictionary<GameInformation.TableObjectNames, int>();
+		for (int i = 0; i < NumberOfTableObjects; i++)
         {
+			var rand = UnityEngine.Random.Range(0, objectsForSpawning.Count());
+			var objectName = objectsForSpawning[rand];
+			var limit = Mathf.CeilToInt(GameInformation.TableObjects[objectName].Limit * NumberOfTableObjects);
+			if (objectTracking.ContainsKey(objectName))
+				objectTracking[objectName]++;
+			else
+				objectTracking.Add(objectName, 1);
+			if (objectTracking[objectName] >= limit)
+			{
+				objectsForSpawning.Remove(objectName);
+			}
 
-            var rand = UnityEngine.Random.Range(0, GameInformation.AllTableObjects.Count);
             var go = Instantiate(TableObjectPrefab);
 			go.transform.SetParent(TableObjectParent.transform);
             var goSize = Vector3.Scale(go.GetComponent<MeshFilter>().mesh.bounds.size, go.transform.localScale);
@@ -94,7 +107,7 @@ public class TableObjectGenerator : MonoBehaviour
 			go.transform.rotation = Quaternion.Euler(spawnRotation);
 
             var tableObjectController = go.GetComponent<TableObjectController>();
-            tableObjectController.TableObjectName = GameInformation.AllTableObjects[rand];
+            tableObjectController.TableObjectName = objectName;
             go.SetActive(true);
 
             yield return new WaitForSeconds(0.05f);
