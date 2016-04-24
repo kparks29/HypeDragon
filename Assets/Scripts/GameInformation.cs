@@ -64,7 +64,7 @@ public static class GameInformation
 		var tableMaterial = Resources.Load("Models/Materials/TableMaterial") as Material;
 
         tableObjects.Add(TableObjectNames.Barrel, new TableObject(null, null, brownMaterial, 0.1f, 0.5f));
-        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, tableMaterial, 0.1f, 0.5f));
+        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, tableMaterial, 0.01f, 0.005f));
         tableObjects.Add(TableObjectNames.Cup, new TableObject(null, null, redMaterial, 0.0005f, 0.01f));
         tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, whiteMaterial, 0.0005f, 0.01f));
 		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, null, yellowMaterial, 0.0001f, 0.01f));

@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TableObjectName: 0
   IsATable: 0
+  explosion: {fileID: 119844, guid: 42d3d29b1bce3214cacf1c6caaf5734d, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
