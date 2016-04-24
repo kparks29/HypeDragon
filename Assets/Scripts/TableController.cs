@@ -8,11 +8,12 @@ public class TableController : MonoBehaviour
 	protected bool PlayingVictory = false;
 	protected float ChangeTimer = 0;
 	protected float ChangeTimerMax = 0.5f;
+    protected Rigidbody TableRigidBody;
 
 	// Use this for initialization
 	void Start ()
 	{
-	
+        TableRigidBody = GetComponent<Rigidbody>();
 	}
 
 	// Update is called once per frame
@@ -49,4 +50,16 @@ public class TableController : MonoBehaviour
 			}
 		}
 	}
+
+    //void OnTriggerEnter(Collider collider)
+    //{
+    //    if (collider.gameObject.name.Contains("Controller"))
+    //    {
+    //        //TableRigidBody.velocity = collider.gameObject.GetComponent<Rigidbody>().velocity * 10;
+    //        Debug.Log(collider.gameObject.name + ", " + collider.gameObject.GetComponent<Rigidbody>().velocity);
+    //        var direction = collider.gameObject.transform.position - transform.position;
+    //        TableRigidBody.AddForceAtPosition(direction.normalized * 5, transform.position);
+    //        //ApplyForce(Rigidbody body) {
+    //    }
+    //}
 }

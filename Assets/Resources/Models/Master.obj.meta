@@ -25,6 +25,10 @@ ModelImporter:
     100034: Eggplant
     100036: Flipper
     100038: Pizza
+    100040: Claw
+    100042: Lollipop
+    100044: Ping_Pong
+    100046: Spatula
     400000: //RootNode
     400002: Plate_Simple
     400004: Rubber_Duck
@@ -45,6 +49,10 @@ ModelImporter:
     400034: Eggplant
     400036: Flipper
     400038: Pizza
+    400040: Claw
+    400042: Lollipop
+    400044: Ping_Pong
+    400046: Spatula
     2300000: Plate_Simple
     2300002: Rubber_Duck
     2300004: Table_Long
@@ -64,6 +72,10 @@ ModelImporter:
     2300032: Eggplant
     2300034: Flipper
     2300036: Pizza
+    2300038: Claw
+    2300040: Lollipop
+    2300042: Ping_Pong
+    2300044: Spatula
     3300000: Plate_Simple
     3300002: Rubber_Duck
     3300004: Table_Long
@@ -83,6 +95,10 @@ ModelImporter:
     3300032: Eggplant
     3300034: Flipper
     3300036: Pizza
+    3300038: Claw
+    3300040: Lollipop
+    3300042: Ping_Pong
+    3300044: Spatula
     4300000: Plate_Simple
     4300002: Rubber_Duck
     4300004: Table_Long
@@ -102,6 +118,10 @@ ModelImporter:
     4300032: Eggplant
     4300034: Flipper
     4300036: Pizza
+    4300038: Claw
+    4300040: Lollipop
+    4300042: Ping_Pong
+    4300044: Spatula
   materials:
     importMaterials: 1
     materialName: 0

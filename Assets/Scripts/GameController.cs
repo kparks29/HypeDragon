@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 	void Start ()
 	{
 		TableObjectGeneratorScript = GetComponent<TableObjectGenerator>();
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();    
         HighScore = PlayerPrefs.GetInt("HighScore", 0);
 	}
 	
@@ -75,6 +75,7 @@ public class GameController : MonoBehaviour
         foreach (Transform obstacle in ObstaclesParent.transform) obstacles.Add(obstacle.gameObject);
         obstacles.ForEach(obstacle => Destroy(obstacle));
 
+        Table.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         Table.transform.position = TableStartPosition;
 		Table.transform.rotation = new Quaternion(0, 0, 0, 0);
 
