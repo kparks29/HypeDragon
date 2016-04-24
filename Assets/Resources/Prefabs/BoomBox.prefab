@@ -1,44 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &129436
+--- !u!1 &164230
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 469272}
-  - 33: {fileID: 3351958}
-  - 23: {fileID: 2308414}
-  - 54: {fileID: 5461268}
-  - 64: {fileID: 6460106}
-  - 114: {fileID: 11441060}
-  - 82: {fileID: 8227840}
+  - 4: {fileID: 476076}
+  - 33: {fileID: 3337154}
+  - 23: {fileID: 2314596}
+  - 54: {fileID: 5405764}
+  - 64: {fileID: 6412776}
+  - 82: {fileID: 8255624}
+  - 114: {fileID: 11474882}
   m_Layer: 0
-  m_Name: ObstaclePrefab
+  m_Name: BoomBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &469272
+--- !u!4 &476076
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.156533, y: 4.6146845e-17, z: -2.078269}
+  m_GameObject: {fileID: 164230}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: -1, z: 5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2308414
+--- !u!23 &2314596
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
+  m_GameObject: {fileID: 164230}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,19 +59,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3351958
+--- !u!33 &3337154
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
-  m_Mesh: {fileID: 0}
---- !u!54 &5461268
+  m_GameObject: {fileID: 164230}
+  m_Mesh: {fileID: 4300024, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+--- !u!54 &5405764
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
+  m_GameObject: {fileID: 164230}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -81,32 +81,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6460106
+--- !u!64 &6412776
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
+  m_GameObject: {fileID: 164230}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
-  m_Mesh: {fileID: 0}
---- !u!82 &8227840
+  m_Mesh: {fileID: 4300024, guid: 4742c93be66f7cb4ca7b2fe60c2ea57c, type: 3}
+--- !u!82 &8255624
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
+  m_GameObject: {fileID: 164230}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 26aab755886f9dc46b438918515103bd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -167,37 +167,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11441060
+--- !u!114 &11474882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129436}
+  m_GameObject: {fileID: 164230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7462a9b626d660343b21715f620faee7, type: 3}
+  m_Script: {fileID: 11500000, guid: ad0b34b8a8291ee49875f64bb2e5ca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TableObjectName: 0
-  IsATable: 0
-  explosion: {fileID: 119844, guid: 42d3d29b1bce3214cacf1c6caaf5734d, type: 2}
-  explosionCollision: {fileID: 122268, guid: 9957732cfc3f3a44b82bb3b6bc2f025b, type: 2}
+  ExplosionSound: {fileID: 8300000, guid: 7df98f394a7aaef41bbde769050f5124, type: 3}
+  NormalMusic: {fileID: 8300000, guid: 26aab755886f9dc46b438918515103bd, type: 3}
+  CrazyMusic: {fileID: 8300000, guid: c793873188d15154191c15183175ff6e, type: 3}
+  Explosion: {fileID: 119844, guid: 42d3d29b1bce3214cacf1c6caaf5734d, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 129436}
+  m_RootGameObject: {fileID: 164230}
   m_IsPrefabParent: 1

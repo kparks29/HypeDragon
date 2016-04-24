@@ -14,6 +14,14 @@ public class BoomBoxController : MonoBehaviour
 		ObjectAudioSource = GetComponent<AudioSource>();
 	}
 
+    void Update ()
+    {
+        if (gameObject.transform.localPosition.y < -5)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
 	public void ChangeToNormalMusic()
 	{
 		ObjectAudioSource.clip = NormalMusic;
@@ -32,7 +40,7 @@ public class BoomBoxController : MonoBehaviour
 		{
 			ObjectAudioSource.clip = ExplosionSound;
 			Instantiate(Explosion, transform.position, transform.rotation);
-			Destroy(gameObject);
+            gameObject.SetActive(false);
 		}
 	}
 }
