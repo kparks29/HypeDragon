@@ -20,7 +20,22 @@ public class ViveInputController : MonoBehaviour {
         {
             gameController.ResetGame();
         }
-    }
+
+		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Axis1))
+		{
+			var gravity = Physics.gravity;
+			gravity.y -= 1;
+			Physics.gravity = gravity;
+			gameController.SetMessage("Gravity Set: " + gravity);
+		}
+		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Axis3))
+		{
+			var gravity = Physics.gravity;
+			gravity.y += 1;
+			Physics.gravity = gravity;
+			gameController.SetMessage("Gravity Set: " + gravity);
+		}
+	}
 
     void OnCollisionEnter(Collision collision)
     {
