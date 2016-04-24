@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ObstacleController : ObjectBaseClass
 {
@@ -10,12 +11,18 @@ public class ObstacleController : ObjectBaseClass
     {
         if (collision.gameObject.name == "TableObjectPrefab(Clone)")
         {
-            Debug.Log("Boom!");
             GameInformation.Score += 10000;
-            Instantiate(explosion, transform.position, transform.rotation);
+
+			var children = new List<GameObject>();
+			foreach (Transform child in transform.parent.transform) children.Add(child.gameObject);
+			if (children.Count == 1)
+			{
+				Debug.Log("Destroyed All Objects!");
+				GameInformation.Score += 50000;
+			}
+
+			Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
-            //var force = collision.relativeVelocity * -1.2f;
-            //collision.gameObject.GetComponent<Rigidbody>().AddForce(force);
             Instantiate(explosionCollision, transform.position, transform.rotation);
         }
     }

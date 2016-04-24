@@ -88,8 +88,10 @@ public class TableObjectGenerator : MonoBehaviour
             var xPos = UnityEngine.Random.Range(minX, maxX);
             var zPos = UnityEngine.Random.Range(minZ, maxZ);
             var spawnPosition = new Vector3(xPos, tablePosition.y + 3, zPos);
+			var spawnRotation = new Vector3(UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360), UnityEngine.Random.Range(0, 360));
 
             go.transform.position = spawnPosition;
+			go.transform.rotation = Quaternion.Euler(spawnRotation);
 
             var tableObjectController = go.GetComponent<TableObjectController>();
             tableObjectController.TableObjectName = GameInformation.AllTableObjects[rand];

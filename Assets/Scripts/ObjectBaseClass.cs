@@ -18,6 +18,8 @@ public class ObjectBaseClass : MonoBehaviour {
 
 	protected float SFXCountDown = 0;
 	protected float SFXCountDownMax = 2;
+	protected int ColliderCount = 0;
+	protected bool FlySoundPlayed = false;
 
     void Start()
     {
@@ -109,14 +111,33 @@ public class ObjectBaseClass : MonoBehaviour {
 		//SFXTimer
 		if (SFXCountDown > 0)
 			SFXCountDown -= Time.deltaTime;
+
+		if (!FlySoundPlayed && TableObjectRigidBody.velocity.magnitude > 7)
+		{
+			FlySoundPlayed = true;
+			TableObjectAudioSource.clip = TableObject.FlySoundEffect;
+			TableObjectAudioSource.Play();
+			Debug.Log("Played Fly Sound!");
+		}
     }
 
 	void OnCollisionEnter(Collision collision)
-	{	
+	{
+		if (collision.gameObject.name == "ExplosionCollision(Clone)")
+		{			
+			ColliderCount++;
+			GameInformation.Score += 1000 * ColliderCount;
+			Debug.Log("Combo: " + ColliderCount + " X 1000");
+		}
+
+
 		if (TableObject.SoundEffect != null && SFXCountDown <= 0)
 		{
 			if (Random.Range(0f, 1f) > 0.3f)
+			{
+				TableObjectAudioSource.clip = TableObject.SoundEffect;
 				TableObjectAudioSource.Play();
+			}
 
 			SFXCountDown = SFXCountDownMax;
 		}

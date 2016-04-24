@@ -70,32 +70,35 @@ public static class GameInformation
 		var sfxObjSpawn2 = Resources.Load("Audio/SoundEffects/SFX_ObjSpawn2") as AudioClip;
 		var sfxObjSpawn3 = Resources.Load("Audio/SoundEffects/SFX_ObjSpawn3") as AudioClip;
 		var sfxExplosion = Resources.Load("Audio/SoundEffects/SFX_EXPLODE1") as AudioClip;
+		var sfxWoosh = Resources.Load("Audio/SoundEffects/SFX_Woosh1") as AudioClip;
 
-		tableObjects.Add(TableObjectNames.Barrel, new TableObject(null, sfxExplosion, brownMaterial, 0.1f, 0.5f));
-        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, tableMaterial, 0.01f, 0.005f));
-        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, sfxObjSpawn2, redMaterial, 0.0005f, 0.01f));
-        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, whiteMaterial, 0.0005f, 0.01f));
-		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, sfxDuck, yellowMaterial, 0.0001f, 0.01f));
-        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, sfxCat, blueMaterial, 0.0005f, 0.1f));
-        tableObjects.Add(TableObjectNames.Banana, new TableObject(null, null, yellowMaterial, 0.0001f, 0.005f));
-        tableObjects.Add(TableObjectNames.Boom_Box, new TableObject(null, sfxObjSpawn1, blackMaterial, 0.0001f, 0.15f));
-        tableObjects.Add(TableObjectNames.Lobster, new TableObject(null, null, redMaterial, 0.0005f, 0.1f));
-        tableObjects.Add(TableObjectNames.Hot_Dog, new TableObject(null, sfxExplosion, textureMaterial, 0.0001f, 0.005f));
-        tableObjects.Add(TableObjectNames.Mosquito, new TableObject(null, sfxObjSpawn3, brownMaterial, 0.0001f, 0.0001f));
+		tableObjects.Add(TableObjectNames.Barrel, new TableObject(null, sfxExplosion, null, brownMaterial, 0.1f, 0.5f));
+        tableObjects.Add(TableObjectNames.PlainTable, new TableObject(null, null, null, tableMaterial, 0.01f, 0.005f));
+        tableObjects.Add(TableObjectNames.Cup, new TableObject(null, sfxObjSpawn2, null, redMaterial, 0.0005f, 0.01f));
+        tableObjects.Add(TableObjectNames.Plate, new TableObject(null, null, null, whiteMaterial, 0.0005f, 0.01f));
+		tableObjects.Add(TableObjectNames.Duck, new TableObject(null, sfxDuck, null, yellowMaterial, 0.0001f, 0.01f));
+        tableObjects.Add(TableObjectNames.Cat, new TableObject(null, sfxCat, sfxWoosh, blueMaterial, 0.0005f, 0.1f));
+        tableObjects.Add(TableObjectNames.Banana, new TableObject(null, null, null, yellowMaterial, 0.0001f, 0.005f));
+        tableObjects.Add(TableObjectNames.Boom_Box, new TableObject(null, sfxObjSpawn1, sfxWoosh, blackMaterial, 0.0001f, 0.15f));
+        tableObjects.Add(TableObjectNames.Lobster, new TableObject(null, null, null, redMaterial, 0.0005f, 0.1f));
+        tableObjects.Add(TableObjectNames.Hot_Dog, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
+        tableObjects.Add(TableObjectNames.Mosquito, new TableObject(null, sfxObjSpawn3, null, brownMaterial, 0.0001f, 0.0001f));
     }
 
 	public class TableObject
     {
         public Mesh ObjectMesh;
         public AudioClip SoundEffect;
+		public AudioClip FlySoundEffect;
 		public Material Material;
         public float Mass;
         public float Drag;
 
-        public TableObject(Mesh objectMesh = null, AudioClip soundEffect = null, Material material = null, float mass = 1, float drag = 1)
+        public TableObject(Mesh objectMesh = null, AudioClip soundEffect = null, AudioClip flySoundEffect = null, Material material = null, float mass = 1, float drag = 1)
         {
             ObjectMesh = objectMesh;
             SoundEffect = soundEffect;
+			FlySoundEffect = flySoundEffect;
 			Material = material;
             Mass = mass;
             Drag = drag;

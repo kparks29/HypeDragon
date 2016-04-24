@@ -16,6 +16,13 @@ public class GameController : MonoBehaviour
 	protected int HighScore = 0;
 	protected bool NewHighScore = false;
 
+	[HideInInspector]
+	public float MessageCountdown = 0;
+	[HideInInspector]
+	public float MessageCountdownMax = 5f;
+	[HideInInspector]
+	public string Message = "";
+
 	void Start ()
 	{
 		TableObjectGeneratorScript = GetComponent<TableObjectGenerator>();
@@ -24,7 +31,8 @@ public class GameController : MonoBehaviour
 	
 	void Update ()
 	{
-		var dispText = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + HighScore;		
+		//Display High Score Stuff
+		var dispText = "Score: " + String.Format("{0:n0}", GameInformation.Score) + "\nHigh Score: " + String.Format("{0:n0}", HighScore);		
 		if (!NewHighScore && GameInformation.Score > HighScore)
 		{
 			NewHighScore = true;
@@ -33,8 +41,15 @@ public class GameController : MonoBehaviour
 		{
 			dispText += "\nNEW HIGH SCORE!!!!";
 		}
-		ScoreDisplay.text = dispText;
 
+		//Display Messages
+		if (Message != "" && MessageCountdown > 0)
+		{
+			MessageCountdown -= Time.deltaTime;
+			dispText += "\n" + Message;
+		}
+
+		ScoreDisplay.text = dispText;
 		if (Input.GetKeyDown(KeyCode.R))
 			ResetGame();
 	}
@@ -63,5 +78,11 @@ public class GameController : MonoBehaviour
 		GameInformation.Score = 0;
 
 		TableObjectGeneratorScript.GenerateObjects();
+	}
+
+	public void SetMessage(string message)
+	{
+		Message = message;
+		MessageCountdown = MessageCountdownMax;
 	}
 }
