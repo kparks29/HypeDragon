@@ -19,8 +19,7 @@ public class ObstacleController : ObjectBaseClass
 			if (children.Count == 1)
 			{
                 var specialCanvas = GameObject.Find("SpecialCanvas");
-                specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "FATALITY!";
-                specialCanvas.GetComponent<Animation>().Play();
+                specialCanvas.GetComponent<ShoutController>().PlayAnimation();
 
                 Debug.Log("Destroyed All Objects!");
 				GameInformation.Score += 50000;

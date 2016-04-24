@@ -42,11 +42,8 @@ public class BoomBoxController : MonoBehaviour
 		{
 			// ObjectAudioSource.clip = ExplosionSound;
 			Instantiate(Explosion, transform.position, transform.rotation);
-            gameObject.SetActive(false);
-            Debug.Log(gameObject.name);
-            specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "Killer Move!";
             GameInformation.Score += 50000;
-            specialCanvas.GetComponent<Animation>().Play();
+            specialCanvas.GetComponent<ShoutController>().PlayAnimation();
 
         }
 	}

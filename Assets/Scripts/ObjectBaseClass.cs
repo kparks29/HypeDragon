@@ -31,12 +31,6 @@ public class ObjectBaseClass : MonoBehaviour {
             var mf = gameObject.AddComponent<MeshFilter>();
             TableObjectMeshFilter = mf;
         }
-        //if (TableObjectMeshFilter.mesh != null)
-        //{
-        //    TableObject.ObjectMesh = TableObjectMeshFilter.mesh;
-        //}
-        //else
-        //Debug.Log("Bewp" + TableObject.ObjectMesh.name);
         TableObjectMeshFilter.mesh = TableObject.ObjectMesh;
 
         if (!IsATable)
@@ -118,7 +112,6 @@ public class ObjectBaseClass : MonoBehaviour {
 			FlySoundPlayed = true;
 			TableObjectAudioSource.clip = TableObject.FlySoundEffect;
 			TableObjectAudioSource.Play();
-			Debug.Log("Played Fly Sound!");
 		}
     }
 
@@ -131,9 +124,8 @@ public class ObjectBaseClass : MonoBehaviour {
 			Debug.Log("Combo: " + ColliderCount + " X 1000");
             if (ColliderCount > 3)
             {
-                var specialCanvas = GameObject.Find("SpecialCanvas");
-                specialCanvas.transform.GetChild(0).GetComponent<Text>().text = "C C C Combo";
-                specialCanvas.GetComponent<Animation>().Play();
+                //var specialCanvas = GameObject.Find("SpecialCanvas");
+                //specialCanvas.GetComponent<ShoutController>().PlayAnimation();
             }
 		}
 
