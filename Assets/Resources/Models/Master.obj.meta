@@ -16,6 +16,9 @@ ModelImporter:
     100016: Table_Long_COL_Top
     100018: Cat
     100020: Cup
+    100022: Banana
+    100024: Barrel
+    100026: Boom_Box
     400000: //RootNode
     400002: Plate_Simple
     400004: Rubber_Duck
@@ -27,6 +30,9 @@ ModelImporter:
     400016: Table_Long_COL_Top
     400018: Cat
     400020: Cup
+    400022: Banana
+    400024: Barrel
+    400026: Boom_Box
     2300000: Plate_Simple
     2300002: Rubber_Duck
     2300004: Table_Long
@@ -37,6 +43,9 @@ ModelImporter:
     2300014: Table_Long_COL_Top
     2300016: Cat
     2300018: Cup
+    2300020: Banana
+    2300022: Barrel
+    2300024: Boom_Box
     3300000: Plate_Simple
     3300002: Rubber_Duck
     3300004: Table_Long
@@ -47,6 +56,9 @@ ModelImporter:
     3300014: Table_Long_COL_Top
     3300016: Cat
     3300018: Cup
+    3300020: Banana
+    3300022: Barrel
+    3300024: Boom_Box
     4300000: Plate_Simple
     4300002: Rubber_Duck
     4300004: Table_Long
@@ -57,6 +69,9 @@ ModelImporter:
     4300014: Table_Long_COL_Top
     4300016: Cat
     4300018: Cup
+    4300020: Banana
+    4300022: Barrel
+    4300024: Boom_Box
   materials:
     importMaterials: 1
     materialName: 0
