@@ -9,8 +9,9 @@ public class GameController : MonoBehaviour
 	public Text ScoreDisplay;
 	public GameObject Table;
 	public GameObject TableObjectsParent;
+    public GameObject ObstaclesParent;
 
-	protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
+    protected Vector3 TableStartPosition = new Vector3(-0.5f, 0, 0);
 	protected TableObjectGenerator TableObjectGeneratorScript;
 	protected int HighScore = 0;
 
@@ -33,7 +34,11 @@ public class GameController : MonoBehaviour
 		foreach (Transform child in TableObjectsParent.transform) children.Add(child.gameObject);
 		children.ForEach(child => Destroy(child));
 
-		Table.transform.position = TableStartPosition;
+        var obstacles = new List<GameObject>();
+        foreach (Transform obstacle in ObstaclesParent.transform) obstacles.Add(obstacle.gameObject);
+        obstacles.ForEach(obstacle => Destroy(obstacle));
+
+        Table.transform.position = TableStartPosition;
 		Table.transform.rotation = new Quaternion(0, 0, 0, 0);
 
 		HighScore = PlayerPrefs.GetInt("HighScore");

@@ -11,20 +11,34 @@ public static class GameInformation
 	public static int Score = 0;
 
 	private static List<TableObjectNames> allTableObjects;
-	public static List<TableObjectNames> AllTableObjects
+    public static List<TableObjectNames> AllTableObjects
 	{
 		get
 		{
 			if (allTableObjects == null)
 			{
-				allTableObjects = Enum.GetValues(typeof(GameInformation.TableObjectNames)).Cast<GameInformation.TableObjectNames>().ToList();
-				allTableObjects = AllTableObjects.Where(o => o >= 0).ToList();
+				allTableObjects = Enum.GetValues(typeof(TableObjectNames)).Cast<GameInformation.TableObjectNames>().ToList();
+				allTableObjects = allTableObjects.Where(o => (int)o >= 0).ToList();
 			}
 			return allTableObjects;
 		}
 	}
 
-	private static Dictionary<TableObjectNames, TableObject> tableObjects;
+    private static List<TableObjectNames> allObstacles;
+    public static List<TableObjectNames> AllObstacles
+    {
+        get
+        {
+            if (allObstacles == null)
+            {
+                allObstacles = Enum.GetValues(typeof(TableObjectNames)).Cast<GameInformation.TableObjectNames>().ToList();
+                allObstacles = allObstacles.Where(o => (int)o < -1).ToList();
+            }
+            return allObstacles;
+        }
+    }
+
+    private static Dictionary<TableObjectNames, TableObject> tableObjects;
     public static Dictionary<TableObjectNames, TableObject> TableObjects
     {
         get
