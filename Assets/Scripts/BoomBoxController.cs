@@ -8,6 +8,7 @@ public class BoomBoxController : MonoBehaviour
 	public AudioClip NormalMusic;
 	public AudioClip CrazyMusic;
 	public GameObject Explosion;
+    public GameObject specialCanvas;
 
 	void Start()
 	{
@@ -38,9 +39,12 @@ public class BoomBoxController : MonoBehaviour
 	{
 		if (collision.gameObject.name == "TableObjectPrefab(Clone)")
 		{
-			ObjectAudioSource.clip = ExplosionSound;
+			// ObjectAudioSource.clip = ExplosionSound;
 			Instantiate(Explosion, transform.position, transform.rotation);
             gameObject.SetActive(false);
-		}
+            Debug.Log(gameObject.name);
+            specialCanvas.GetComponent<Animation>().Play();
+
+        }
 	}
 }
