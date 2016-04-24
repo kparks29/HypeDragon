@@ -17,7 +17,7 @@ public class ObjectBaseClass : MonoBehaviour {
     protected Quaternion LastRotation;
 
 	protected float SFXCountDown = 0;
-	protected float SFXCountDownMax = 1;
+	protected float SFXCountDownMax = 2;
 
     void Start()
     {
@@ -115,7 +115,9 @@ public class ObjectBaseClass : MonoBehaviour {
 	{	
 		if (TableObject.SoundEffect != null && SFXCountDown <= 0)
 		{
-			TableObjectAudioSource.Play();
+			if (Random.Range(0f, 1f) > 0.3f)
+				TableObjectAudioSource.Play();
+
 			SFXCountDown = SFXCountDownMax;
 		}
 		ChildCollisionEnter(collision);
