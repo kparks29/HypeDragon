@@ -49,7 +49,7 @@ public class TableObjectGenerator : MonoBehaviour
             var obstacle = Instantiate(ObstaclePrefab);
             obstacle.transform.SetParent(ObstacleParent.transform);
             var goSize = Vector3.Scale(obstacle.GetComponent<MeshFilter>().mesh.bounds.size, obstacle.transform.localScale);
-            var minX = tablePosition.x - 4;
+            var minX = tablePosition.x - 2;
             var maxX = tablePosition.x - 10;
             var minZ = tablePosition.z - 3;
             var maxZ = tablePosition.z + 3;

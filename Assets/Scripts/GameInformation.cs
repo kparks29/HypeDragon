@@ -18,13 +18,9 @@ public static class GameInformation
         Hot_Dog = 6,
         Lobster = 7,
         Mosquito = 8,
-        Plate2 = 9,
-        Cup2 = 10,
-        Banana2 = 11,
-        Hot_Dog2 = 12,
-        Flipper = 13,
-        Eggplant = 14,
-        Pizza = 15
+        Flipper = 9,
+        Eggplant = 10,
+        Pizza = 11
     };
 
 	public static int Score = 0;
@@ -102,10 +98,6 @@ public static class GameInformation
         tableObjects.Add(TableObjectNames.Lobster, new TableObject(null, null, null, redMaterial, 0.0005f, 0.1f));
         tableObjects.Add(TableObjectNames.Hot_Dog, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Mosquito, new TableObject(null, sfxObjSpawn3, null, brownMaterial, 0.0001f, 0.0001f));
-        tableObjects.Add(TableObjectNames.Cup2, new TableObject(null, sfxObjSpawn2, null, redMaterial, 0.0005f, 0.01f));
-        tableObjects.Add(TableObjectNames.Plate2, new TableObject(null, null, null, whiteMaterial, 0.0005f, 0.01f));
-        tableObjects.Add(TableObjectNames.Banana2, new TableObject(null, null, null, yellowMaterial, 0.0001f, 0.005f));
-        tableObjects.Add(TableObjectNames.Hot_Dog2, new TableObject(null, sfxExplosion, null, textureMaterial, 0.0001f, 0.005f));
         tableObjects.Add(TableObjectNames.Flipper, new TableObject(null, null, null, textureMaterial, 0.005f, 0.05f));
         tableObjects.Add(TableObjectNames.Eggplant, new TableObject(null, null, null, textureMaterial, 0.005f, 0.01f));
         tableObjects.Add(TableObjectNames.Pizza, new TableObject(null, sfxExplosion, null, textureMaterial, 0.005f, 0.01f, 0.01f));
