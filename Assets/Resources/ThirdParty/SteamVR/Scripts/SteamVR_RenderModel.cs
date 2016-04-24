@@ -14,6 +14,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 {
 	public SteamVR_TrackedObject.EIndex index = SteamVR_TrackedObject.EIndex.None;
 	public string modelOverride;
+    public Mesh meshOverride;
 
 	// Shader to apply to model.
 	public Shader shader;
@@ -291,8 +292,14 @@ public class SteamVR_RenderModel : MonoBehaviour
 
 					models[renderModelName] = model;
 				}
-
-				gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
+                if (meshOverride != null)
+                {
+                    gameObject.AddComponent<MeshFilter>().mesh = meshOverride;
+                }
+                else
+                {
+                    gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
+                }
 				gameObject.AddComponent<MeshRenderer>().sharedMaterial = model.material;
 				return true;
 			}

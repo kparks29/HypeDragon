@@ -8,6 +8,8 @@ public class ViveInputController : MonoBehaviour {
     public GameController gameController;
     public int controllerIndex;
 
+    protected int handIndex = 0;
+
     void Awake ()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
@@ -22,7 +24,17 @@ public class ViveInputController : MonoBehaviour {
             gameController.ResetGame();
         }
 
-		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
+        {
+            var count = gameObject.transform.childCount;
+            gameObject.transform.GetChild(handIndex).gameObject.SetActive(false);
+            Debug.Log(count);
+            handIndex = handIndex >= count - 1 ? 0 : handIndex +=1;
+            Debug.Log(handIndex);
+            gameObject.transform.GetChild(handIndex).gameObject.SetActive(true);
+        }
+
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
 		{
             Debug.Log("change gravity");
 			var gravity = Physics.gravity;
