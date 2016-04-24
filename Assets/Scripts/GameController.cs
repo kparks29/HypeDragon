@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,7 +20,7 @@ public class GameController : MonoBehaviour
 	
 	void Update ()
 	{
-		//ScoreDisplay.text = "Score: " + GameInformation.Score;
+		ScoreDisplay.text = "Score: " + String.Format("{0:n0}", GameInformation.Score);
 		if (Input.GetKeyDown(KeyCode.R))
 			ResetGame();
 	}
